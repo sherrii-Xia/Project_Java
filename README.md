@@ -27,8 +27,8 @@ This builds a practical preordering system that could be used in the real life, 
 
 ## User Stories
 - As a user, I want to see the picture of the dish. 
-- As a user, I want to see the ingredients of the dish (alergy ag)
+- As a user, I want to see the ingredients of the dish (allergy issue)
 - As a user, I want to select the food I want, and save it. 
-- As a user, I want to delect the dish I don't want.
+- As a user, I want to delete the dish I don't want.
 - As a user, I want to know the total amount of money the food I picked would cost. 
-- As a user, I want to customize the food (chanage flavor, adjust protion of ingredients)
+- As a user, I want to customize the food (change flavor, adjust protion of ingredients)
