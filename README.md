@@ -1,11 +1,23 @@
 # My Personal Project
 
 ## Project description 
+
+What will the application do?
+
 This application is an online ordering system for restaurants.
 It allows customers to order takeaway or dine in remotely.
-Customers can use this to preview the meus，
+Basically, customers can preorder the food they want via this application even
+though they are not physically in the restaurant
+
+Who will use it?
+Customers can use this to preview the menu，
 to let them view the menu,
 select & select the food they want, and output the bill of that order. 
+
+
+Why is this project of interest to you?
+This builds a practical preorder system that could be used in the real life,
+which motivates me.
 
 
 
