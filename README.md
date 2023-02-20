@@ -30,5 +30,6 @@ This builds a practical preordering system that could be used in the real life, 
 - As a user, I want to see the ingredients of the dish (allergy issue)
 - As a user, I want to select the food I want, and save it. 
 - As a user, I want to delete the dish I don't want.
+- As a user, I want to modify the number of each dish I have in my order.
 - As a user, I want to know the total amount of money the food I picked would cost. 
 - As a user, I want to customize the food (change flavor, adjust protion of ingredients)
