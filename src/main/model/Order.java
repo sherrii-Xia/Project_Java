@@ -42,13 +42,16 @@ public class Order {
     // EFFECTS: if the dish is already exits in the order with count >= 2, then
     //          the count for that dish will be subtract by 1,
     //          otherwise remove the dish in the order.
-    public void removeDish(Dish dish) {
+    public boolean removeDish(Dish dish) {
         int index = 0;
+        boolean success = false;
         for (Dish current : dishes) {
             if (current.getName() == dish.getName()) {
                 int currentCount = current.getCount();
+                success = true;
                 if (currentCount == 1) {
                     dishes.remove(index);
+
                 } else {
                     currentCount--;
                     current.setCount(currentCount);
@@ -56,7 +59,18 @@ public class Order {
             }
             index++;
         }
+        return success;
 
+    }
+
+    public void displayOrder() {
+        System.out.println("The current summary of the Order");
+        System.out.printf("%-35s%-10s\n","Dish", "Cost");
+        for (Dish current : dishes) {
+            current.printDish();
+        }
+
+        System.out.println("\nThe total Amount : " + "$" + getTotalAmount());
     }
 
     // REQUIRES: Dish have to be exists in the dishes list， num >= 1

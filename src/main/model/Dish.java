@@ -92,7 +92,11 @@ public class Dish { //TODO: needed some specification
     // MODIFIES: TODO
     // EFFECTS: TODO
     public void printDish() {
-        System.out.println("\t" + this.name + " $" + this.price);
+//        System.out.println(this.name + "\t" + " $" + this.price * this.getCount());
+        System.out.printf("%-35s%-5.2f\n", this.name, this.price * this.getCount());
+        if (getCount() > 1) {
+            System.out.println("\t" + " $" + this.getCount() + " @ $" + this.price + " each");
+        }
     }
 
 }

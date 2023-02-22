@@ -31,7 +31,7 @@ public class Menu {
         System.out.println("\n Categories: Boiling Pot");
         int key = 1;
         for (Dish d : boilingPot) {
-            System.out.println("\t" + "NO." +  key + " " + d.getName() + " $" + d.getPrice());
+            System.out.println("\t" + "NO." + key + " " + d.getName() + " $" + d.getPrice());
             key++;
         }
         System.out.println("\n Categories: Meats");
@@ -42,7 +42,7 @@ public class Menu {
 
         System.out.println("\n Categories: Leaf Vegetable");
         for (Dish d : leafVegetables) {
-            System.out.println("\t" + "NO." +  key + " " + d.getName() + " $" + d.getPrice());
+            System.out.println("\t" + "NO." + key + " " + d.getName() + " $" + d.getPrice());
             key++;
         }
     }
@@ -86,6 +86,13 @@ public class Menu {
         leafVegetables.add(d10);
         leafVegetables.add(d11);
         leafVegetables.add(d12);
+
+    }
+
+    public Dish getDish(int index) {
+        Dish current = totalDish.get(index - 1);
+        Dish result = new Dish(current.getName(), 1, current.getPrice());
+        return result;
 
     }
 
