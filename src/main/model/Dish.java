@@ -88,4 +88,11 @@ public class Dish { //TODO: needed some specification
 
     }
 
+    // REQUIRES: TODO
+    // MODIFIES: TODO
+    // EFFECTS: TODO
+    public void printDish() {
+        System.out.println("\t" + this.name + " $" + this.price);
+    }
+
 }
