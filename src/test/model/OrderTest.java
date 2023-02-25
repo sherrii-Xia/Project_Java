@@ -3,6 +3,9 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -44,7 +47,6 @@ public class OrderTest {
         emptyOrder.addDish(tomato);
         assertEquals(19.5 * 2, emptyOrder.getTotalAmount());
         assertEquals(1, emptyOrder.getNumDish());
-        //TODO: 需要一个get DIsh to help the test
 
 
     }
@@ -98,6 +100,7 @@ public class OrderTest {
 
     }
 
+
     @Test
     public void getTotalAmount() {
         assertEquals(0.0, emptyOrder.getTotalAmount());
@@ -108,6 +111,13 @@ public class OrderTest {
         assertEquals(19.5 * 2 + 12.0*2.0, DuplicateOrder.getTotalAmount());
 
 
+    }
+    @Test
+    public void getDishesTest() {
+        List<Dish> r1 = new ArrayList<>();
+        r1.add(tomato);
+        r1.add(hamberger);
+        assertEquals(r1, DuplicateOrder.getDishes());
     }
 
 

@@ -19,7 +19,8 @@ Why is this project of interest to you?
 This builds a practical preorder system that could be used in the real life,
 which motivates me.
 
-
+X : the dish 
+Y:  the order that customer made.
 
 
 Basically, customers can preorder the food they want via this application even though they are not physically in the restaurant

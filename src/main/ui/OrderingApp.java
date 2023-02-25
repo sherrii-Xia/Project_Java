@@ -113,9 +113,9 @@ public class OrderingApp {
 
     public void checkBill() {
         System.out.println("Checking bill ...");
-        System.out.println("--------------------------------");
-        order.displayOrder();
-        System.out.println("--------------------------------");
+        System.out.println("------------------------------------");
+        displayOrder(order);
+        System.out.println("------------------------------------");
         System.out.println("The bill has been checked!");
 
     }
@@ -125,9 +125,24 @@ public class OrderingApp {
     }
 
     public void viewOrder() {
-        order.displayOrder();
+        displayOrder(order);
 
     }
+
+    public void displayOrder(Order order) {
+        System.out.println("The current summary of the Order");
+        System.out.printf("%-35s%-10s\n","Dish", "Cost");
+        for (Dish current : order.getDishes()) {
+            System.out.printf("%-35s%-5.2f\n", current.getName(), current.getPrice() * current.getCount());
+            if (current.getCount() > 1) {
+                System.out.println("\t" + " $" + current.getCount() + " @ $" + current.getPrice() + " each");
+            }
+        }
+
+        System.out.println("\nThe total Amount : " + "$" + order.getTotalAmount());
+    }
+
+
 
 
 }

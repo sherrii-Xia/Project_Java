@@ -29,6 +29,7 @@ public class Dish { //TODO: needed some specification
         this.price = price;
         this.flavor = flavor;
         this.ingredients = ingret;
+        this.count = count;
 
     }
 
@@ -88,15 +89,5 @@ public class Dish { //TODO: needed some specification
 
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
-    public void printDish() {
-//        System.out.println(this.name + "\t" + " $" + this.price * this.getCount());
-        System.out.printf("%-35s%-5.2f\n", this.name, this.price * this.getCount());
-        if (getCount() > 1) {
-            System.out.println("\t" + " $" + this.getCount() + " @ $" + this.price + " each");
-        }
-    }
 
 }

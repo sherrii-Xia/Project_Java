@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
     private int account;
@@ -63,15 +64,6 @@ public class Order {
 
     }
 
-    public void displayOrder() {
-        System.out.println("The current summary of the Order");
-        System.out.printf("%-35s%-10s\n","Dish", "Cost");
-        for (Dish current : dishes) {
-            current.printDish();
-        }
-
-        System.out.println("\nThe total Amount : " + "$" + getTotalAmount());
-    }
 
     // REQUIRES: Dish have to be exists in the dishes list， num >= 1
     // MODIFIES: this
@@ -108,6 +100,10 @@ public class Order {
 
     public int getNumDish() {
         return dishes.size();
+    }
+
+    public List<Dish> getDishes() {
+        return this.dishes;
     }
 
     public boolean containDish(Dish d) {
