@@ -27,7 +27,7 @@ public class Order {
         } else {
             int index = 0;
             for (Dish current : dishes) {
-                if (current.getName() == dish.getName()) {
+                if (current.getName().equals(dish.getName())) {
                     int currentCount = current.getCount();
                     currentCount++;
                     current.setCount(currentCount);
@@ -47,7 +47,7 @@ public class Order {
         int index = 0;
         boolean success = false;
         for (Dish current : dishes) {
-            if (current.getName() == dish.getName()) {
+            if (current.getName().equals(dish.getName())) {
                 int currentCount = current.getCount();
                 success = true;
                 if (currentCount == 1) {

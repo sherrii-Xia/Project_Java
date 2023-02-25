@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class OrderTest {
@@ -47,6 +47,9 @@ public class OrderTest {
         emptyOrder.addDish(tomato);
         assertEquals(19.5 * 2, emptyOrder.getTotalAmount());
         assertEquals(1, emptyOrder.getNumDish());
+        emptyOrder.addDish(tomato);
+        assertEquals(19.5 * 3, emptyOrder.getTotalAmount());
+        assertEquals(1, emptyOrder.getNumDish());
 
 
     }
@@ -58,6 +61,8 @@ public class OrderTest {
         emptyOrder.addDish(fires);
         assertEquals(19.5 + 5.0, emptyOrder.getTotalAmount());
         assertEquals(2, emptyOrder.getNumDish());
+        emptyOrder.addDish(hamberger);
+        assertEquals(3,emptyOrder.getNumDish());
 
 
     }
@@ -69,16 +74,19 @@ public class OrderTest {
     //          otherwise remove the dish in the order.
     @Test
     public void removeDishRemoveOne() {
+
         DuplicateOrder.removeDish(tomato);
         assertEquals( 12.0 * 2.0, DuplicateOrder.getTotalAmount());
         assertEquals(1, DuplicateOrder.getNumDish());
+        boolean r = DuplicateOrder.removeDish(tomato);
+        assertFalse(r);
 
 
     }
 
     @Test
     public void removeDishRemoveMultiple() {
-        DuplicateOrder.removeDish(tomato);
+        boolean r = DuplicateOrder.removeDish(tomato);
         assertEquals( 12.0*2.0, DuplicateOrder.getTotalAmount());
         assertEquals(1, DuplicateOrder.getNumDish());
         DuplicateOrder.removeDish(hamberger);
