@@ -42,6 +42,7 @@ public class OrderTest {
     //          otherwise add that the new dish in to the orders.
     @Test
     public void addDishTestOneDish() {
+
         emptyOrder.addDish(tomato);
         assertEquals(19.5, emptyOrder.getTotalAmount());
         emptyOrder.addDish(tomato);
@@ -50,6 +51,7 @@ public class OrderTest {
         emptyOrder.addDish(tomato);
         assertEquals(19.5 * 3, emptyOrder.getTotalAmount());
         assertEquals(1, emptyOrder.getNumDish());
+
 
 
     }
@@ -61,6 +63,8 @@ public class OrderTest {
         emptyOrder.addDish(fires);
         assertEquals(19.5 + 5.0, emptyOrder.getTotalAmount());
         assertEquals(2, emptyOrder.getNumDish());
+        emptyOrder.addDish(hamberger);
+        assertEquals(3,emptyOrder.getNumDish());
         emptyOrder.addDish(hamberger);
         assertEquals(3,emptyOrder.getNumDish());
 
