@@ -93,19 +93,23 @@ public class Order {
 
     }
 
+
+    // EFFECTS: get the name of the customer
     public String getName() {
         return this.customer;
     }
 
-
+    //EFFECTS: get the totoal number of the dish in the order
     public int getNumDish() {
         return dishes.size();
     }
 
+    //EFFECTS: get the dishes in the order
     public List<Dish> getDishes() {
         return this.dishes;
     }
 
+    //EFFECTS: return true if the dish in the order, false otherwise
     public boolean containDish(Dish d) {
         for (Dish current : dishes) {
             if (current.getName() == d.getName()) {

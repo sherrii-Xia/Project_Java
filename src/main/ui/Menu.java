@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    //TODO: Instansite a full menu, with the each dish Descrpition
     private List<Dish> totalDish;
     private List<Dish> boilingPot;
     private List<Dish> meats;
@@ -26,9 +25,11 @@ public class Menu {
 
     }
 
+
+    // EFFECTS: display the menu
     public void displayMenu() {
         this.settingUpDish();
-        System.out.println("\n Categories: Boiling Pot");
+        System.out.println("\n Categories: Boiling Pot Soup Base");
         int key = 1;
         for (Dish d : boilingPot) {
             System.out.println("\t" + "NO." + key + " " + d.getName() + " $" + d.getPrice());
@@ -47,10 +48,12 @@ public class Menu {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: set up the dishes that is under boiling pot category.
     public void setBoilingPot() {
         this.boilingPot = new ArrayList<>();
         Dish d1 = new Dish("Sichuan Spicy Hotpot", 1, 24.0);
-        Dish d2 = new Dish(" Pork Stomach and Chicken Soup", 1, 24.0);
+        Dish d2 = new Dish("Pork Stomach and Chicken Soup", 1, 24.0);
         Dish d3 = new Dish("Sichuan Pickles Hot Pot", 1, 18.0);
         Dish d4 = new Dish("Tomato Soup Hot Pot", 1, 20.0);
         boilingPot.add(d1);
@@ -59,10 +62,9 @@ public class Menu {
         boilingPot.add(d4);
     }
 
-//    public void  setdriedPot() {
-//        this.driedPot = new ArrayList<>();
-//    }
 
+    // MODIFIES: this
+    // EFFECTS: set up the dishes that is under Meat category.
     public void setMeats() {
         this.meats = new ArrayList<>();
         Dish d5 = new Dish("Iberico Pork", 1, 24.0);
@@ -75,6 +77,8 @@ public class Menu {
         meats.add(d8);
     }
 
+    // MODIFIES: this
+    // EFFECTS: set up the dishes that is under Vegetables category.
     public void setleafVegetables() {
         this.leafVegetables = new ArrayList<>();
         Dish d9 = new Dish("Vegetable Combo", 1, 14.0);
@@ -89,6 +93,8 @@ public class Menu {
 
     }
 
+    // REQUIRES: index <= totalDish.size()
+    // EFFECTS: return the dish in total dish that is in the given index.
     public Dish getDish(int index) {
         Dish current = totalDish.get(index - 1);
         Dish result = new Dish(current.getName(), 1, current.getPrice());

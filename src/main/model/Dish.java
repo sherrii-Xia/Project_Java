@@ -1,18 +1,18 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Dish { //TODO: needed some specification
+public class Dish {
     private final String name;
     private int count;
     private final double price;
     private String type;
     private String flavor;
-    private ArrayList<String> ingredients;
+    private List<String> ingredients;
     private String requirement;
 
 
-    // MODIFIES: this
     // EFFECTS:  Create a new dish with given name, given count, given price
     //           but no flavor, no ingredients.
     public Dish(String name, int count, double price) {
@@ -21,9 +21,9 @@ public class Dish { //TODO: needed some specification
         this.price = price;
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+
+    // EFFECTS: Create a new dish with given name, given count, given price
+    //          given flavor, given ingredients.
     public Dish(String name, int count, double price, String flavor, ArrayList<String> ingret) {
         this.name = name;
         this.price = price;
@@ -33,58 +33,55 @@ public class Dish { //TODO: needed some specification
 
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+
+    // EFFECTS: return the name of dish
     public String getName() {
         return this.name;
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+    // EFFECTS: return the count of dish
     public int getCount() {
         return this.count;
     }
 
+
+    // REQUIRES: count >= 1
+    // MODIFIES: this
+    // EFFECTS: set the count of dish to given count.
     public void setCount(int count) {
         this.count = count;
 
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+
+    // EFFECTS: return the price of the dish
     public double getPrice() {
         return this.price;
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+
+    // EFFECTS: return the flavor of the dish
     public String getFlavor() {
         return this.flavor;
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
+
+    // MODIFIES: this
+    // EFFECTS: set the flavor of the dish
     public void setFlavor(String newflavor) {
         this.flavor = newflavor;
 
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
-    public ArrayList<String> getIngredients() {
+
+    // EFFECTS: return the ingredients of the dish
+    public List<String> getIngredients() {
         return this.ingredients;
     }
 
-    // REQUIRES: TODO
-    // MODIFIES: TODO
-    // EFFECTS: TODO
-    public void setIngredients(ArrayList ingredients) {
+
+    // EFFECTS: set the ingredients of the
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
 
     }
