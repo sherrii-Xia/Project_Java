@@ -15,12 +15,14 @@ public class OrderTest {
     Order emptyOrder;
     Order DuplicateOrder;
     Dish tomato, fires, hamberger;
+    String ingret;
 
     @BeforeEach
     public void setup() {
-        tomato = new Dish("tomato stew", 1, 19.5);
-        fires = new Dish("french fires", 1, 5.0);
-        hamberger = new Dish("Hamburger", 2, 12.0);
+        ingret = "Hi i am a ingredient!";
+        tomato = new Dish("tomato stew", 1, 19.5, ingret);
+        fires = new Dish("french fires", 1, 5.0, ingret);
+        hamberger = new Dish("Hamburger", 2, 12.0, ingret);
         o1 = new Order("Order 1");
         emptyOrder = new Order("Empty Order!");
         DuplicateOrder = new Order("Duplicated! ");

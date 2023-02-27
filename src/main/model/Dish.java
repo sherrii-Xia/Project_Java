@@ -1,30 +1,28 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Dish {
     private final String name;
     private int count;
     private final double price;
     private String type;
     private String flavor;
-    private List<String> ingredients;
+    private String ingredients;
     private String requirement;
 
 
     // EFFECTS:  Create a new dish with given name, given count, given price
     //           but no flavor, no ingredients.
-    public Dish(String name, int count, double price) {
+    public Dish(String name, int count, double price, String ingret) {
         this.name = name;
         this.count = count;
         this.price = price;
+        ingredients = ingret;
     }
 
 
     // EFFECTS: Create a new dish with given name, given count, given price
     //          given flavor, given ingredients.
-    public Dish(String name, int count, double price, String flavor, ArrayList<String> ingret) {
+    public Dish(String name, int count, double price, String flavor, String ingret) {
         this.name = name;
         this.price = price;
         this.flavor = flavor;
@@ -75,13 +73,13 @@ public class Dish {
 
 
     // EFFECTS: return the ingredients of the dish
-    public List<String> getIngredients() {
+    public String getIngredients() {
         return this.ingredients;
     }
 
 
     // EFFECTS: set the ingredients of the
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
 
     }

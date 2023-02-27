@@ -2,21 +2,17 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class DishTest {
     Dish testDish;
     Dish testDish1;
-    ArrayList<String> ingret;
+    String ingret;
     @BeforeEach
     public void setup() {
-        testDish = new Dish("Dish 1", 1, 12.5);
-        ingret = new ArrayList<String>();
-        ingret.add("Potato");
-        ingret.add("Flour");
+        testDish = new Dish("Dish 1", 1, 12.5, ingret);
+        ingret = "We are the ingredience!";
         testDish1 = new Dish("Fires", 1, 12.5, "Sour", ingret);
     }
     @Test
@@ -71,7 +67,7 @@ class DishTest {
     }
     @Test
     public void setIngredientsTest() {
-        ArrayList<String> empty = new ArrayList<String>();
+        String empty = null;
         testDish1.setIngredients(empty);
         assertEquals(empty, testDish1.getIngredients());
     }

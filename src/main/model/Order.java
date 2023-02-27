@@ -8,8 +8,7 @@ public class Order {
     private String customer;
     private ArrayList<Dish> dishes;
 
-    // REQUIRES: TODO
-    // MODIFIES: this
+
     // EFFECTS: create a new empty order with given customer name.
     public Order(String name) {
         this.customer = name;
@@ -41,7 +40,7 @@ public class Order {
     // REQUIRES: Dish has to be exits in the dishes list
     // MODIFIES: this
     // EFFECTS: if the dish is already exits in the order with count >= 2, then
-    //          the count for that dish will be subtract by 1,
+    //          the count for that dish will be subtracted by 1,
     //          otherwise remove the dish in the order.
     public boolean removeDish(Dish dish) {
         int index = 0;
