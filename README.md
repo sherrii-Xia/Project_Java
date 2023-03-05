@@ -34,3 +34,5 @@ This builds a practical preordering system that could be used in the real life, 
 - As a user, I want to restart my order whenever I like 
 - As a user, I want to know the total amount of money the food I picked would cost. 
 - As a user, I want to customize the food (change flavor, adjust protion of ingredients)
+- As a user, I want to save my current order whem quiting the app
+- As a user, I want to load my previous order from a file 

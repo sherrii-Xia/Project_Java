@@ -2,7 +2,9 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Represents an order for the customer using OderingApp.
+ */
 public class Order {
     private int account;
     private String customer;

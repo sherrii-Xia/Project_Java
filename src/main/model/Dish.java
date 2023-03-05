@@ -1,6 +1,10 @@
 package model;
 
+/**
+ * Represents a Dish with name, count, price that be used in Menus.
+ */
 public class Dish {
+
     private final String name;
     private int count;
     private final double price;

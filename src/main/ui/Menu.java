@@ -4,7 +4,9 @@ import model.Dish;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Represents the menu in Ordering App.
+ */
 public class Menu {
     private List<Dish> totalDish;
     private List<Dish> boilingPot;

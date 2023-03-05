@@ -5,6 +5,9 @@ import model.Order;
 
 import java.util.Scanner;
 
+/**
+ * Represents The Ordering System application.
+ */
 public class OrderingApp {
     private Menu menu;
     private Order order;
@@ -120,7 +123,7 @@ public class OrderingApp {
         String c = input.next();
         if (c.equals("a")) {
             doAddDish(dish);
-        } else if (c.equals("rc")) {
+        } else if (c.equals("r")) {
             doRemoveDish(dish);
         } else {
             System.out.println("\t Please enter the right letter.");
