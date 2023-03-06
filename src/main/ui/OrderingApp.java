@@ -103,7 +103,7 @@ public class OrderingApp {
 
     //MODIFIES: this
     //EFFECT: load the order exists in data file.
-    private void  loadOrder() {
+    private void loadOrder() {
         try {
             order = jsonReader.read();
             System.out.println("Loaded " + order.getName() + "'s order from " + JSON_STORE);
@@ -114,7 +114,7 @@ public class OrderingApp {
 
     //MODIFIES: this
     //EFFECT: save the current order to data file.
-    public void  saveOrder() {
+    public void saveOrder() {
         try {
             jsonWriter.open();
             jsonWriter.write(order);

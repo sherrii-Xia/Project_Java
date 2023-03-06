@@ -65,7 +65,7 @@ public class JsonReader {
         int count = jsonObject.getInt("count");
         double price = jsonObject.getDouble("price");
         String ingret = jsonObject.getString("ingredients");
-        Dish dish = new Dish(name,count,price,ingret);
+        Dish dish = new Dish(name, count, price, ingret);
         order.addDish(dish);
     }
 }

@@ -10,7 +10,6 @@ public class Dish {
     private final String name;
     private int count;
     private final double price;
-//    private String type;
     private String flavor;
     private String ingredients;
     //private String requirement;
@@ -95,8 +94,8 @@ public class Dish {
         JSONObject json = new JSONObject();
         json.put("name", name);
         json.put("count", count);
-        json.put("price",price);
-        json.put("ingredients",ingredients);
+        json.put("price", price);
+        json.put("ingredients", ingredients);
         return json;
     }
 }

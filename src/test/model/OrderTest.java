@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class OrderTest {
@@ -55,7 +56,6 @@ public class OrderTest {
         assertEquals(1, emptyOrder.getNumDish());
 
 
-
     }
 
     @Test
@@ -66,9 +66,9 @@ public class OrderTest {
         assertEquals(19.5 + 5.0, emptyOrder.getTotalAmount());
         assertEquals(2, emptyOrder.getNumDish());
         emptyOrder.addDish(hamberger);
-        assertEquals(3,emptyOrder.getNumDish());
+        assertEquals(3, emptyOrder.getNumDish());
         emptyOrder.addDish(hamberger);
-        assertEquals(3,emptyOrder.getNumDish());
+        assertEquals(3, emptyOrder.getNumDish());
 
 
     }
@@ -82,7 +82,7 @@ public class OrderTest {
     public void removeDishRemoveOne() {
 
         DuplicateOrder.removeDish(tomato);
-        assertEquals( 12.0 * 2.0, DuplicateOrder.getTotalAmount());
+        assertEquals(12.0 * 2.0, DuplicateOrder.getTotalAmount());
         assertEquals(1, DuplicateOrder.getNumDish());
         boolean r = DuplicateOrder.removeDish(tomato);
         assertFalse(r);
@@ -93,7 +93,7 @@ public class OrderTest {
     @Test
     public void removeDishRemoveMultiple() {
         boolean r = DuplicateOrder.removeDish(tomato);
-        assertEquals( 12.0*2.0, DuplicateOrder.getTotalAmount());
+        assertEquals(12.0 * 2.0, DuplicateOrder.getTotalAmount());
         assertEquals(1, DuplicateOrder.getNumDish());
         DuplicateOrder.removeDish(hamberger);
         assertEquals(12.0, DuplicateOrder.getTotalAmount());
@@ -108,7 +108,7 @@ public class OrderTest {
     @Test
     public void setDishTest() {
         DuplicateOrder.setDish(tomato, 10);
-        assertEquals(19.5 * 10 + 12.0*2, DuplicateOrder.getTotalAmount());
+        assertEquals(19.5 * 10 + 12.0 * 2, DuplicateOrder.getTotalAmount());
         assertEquals(2, DuplicateOrder.getNumDish());
 
 
@@ -119,13 +119,14 @@ public class OrderTest {
     public void getTotalAmount() {
         assertEquals(0.0, emptyOrder.getTotalAmount());
         emptyOrder.addDish(tomato);
-        assertEquals(19.5,emptyOrder.getTotalAmount());
+        assertEquals(19.5, emptyOrder.getTotalAmount());
         emptyOrder.addDish(tomato);
         assertEquals(19.5 * 2, emptyOrder.getTotalAmount());
-        assertEquals(19.5 * 2 + 12.0*2.0, DuplicateOrder.getTotalAmount());
+        assertEquals(19.5 * 2 + 12.0 * 2.0, DuplicateOrder.getTotalAmount());
 
 
     }
+
     @Test
     public void getDishesTest() {
         List<Dish> r1 = new ArrayList<>();

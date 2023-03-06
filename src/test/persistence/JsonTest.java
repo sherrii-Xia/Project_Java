@@ -1,6 +1,6 @@
 package persistence;
 
-import model.*;
+import model.Dish;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

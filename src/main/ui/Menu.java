@@ -4,6 +4,7 @@ import model.Dish;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Represents the menu in Ordering App.
  */
@@ -12,7 +13,7 @@ public class Menu {
     private List<Dish> boilingPot;
     private List<Dish> meats;
     private List<Dish> leafVegetables;
-    private  String ingret;
+    private String ingret;
 
     // MODIFIES: this
     // EFFECTS: setting up dish for in category boiling pots, meats, vegetables.

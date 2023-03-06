@@ -1,14 +1,16 @@
 package persistence;
 
-import model.*;
+import model.Dish;
+import model.Order;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-class JsonReaderTest extends JsonTest  {
+class JsonReaderTest extends JsonTest {
 
     @Test
     void testReaderNonExistentFile() {
@@ -41,8 +43,8 @@ class JsonReaderTest extends JsonTest  {
             assertEquals("Alex", wr.getName());
             List<Dish> dishes = wr.getDishes();
             assertEquals(2, dishes.size());
-            checkThingy("Hotpot",2,19.5,"There is some food", dishes.get(0));
-            checkThingy("Fish",1,20.0,"There is some fish ", dishes.get(1));
+            checkThingy("Hotpot", 2, 19.5, "There is some food", dishes.get(0));
+            checkThingy("Fish", 1, 20.0, "There is some fish ", dishes.get(1));
         } catch (IOException e) {
             fail("Couldn't read from file");
         }

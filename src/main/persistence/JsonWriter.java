@@ -3,14 +3,15 @@ package persistence;
 import model.Order;
 import org.json.JSONObject;
 
-
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 // Represents a writer that writes JSON representation of Order to file
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
-    private String destination;
+    private final String destination;
 
     // EFFECTS: constructs writer to write to destination file
     public JsonWriter(String destination) {

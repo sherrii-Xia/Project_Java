@@ -1,12 +1,14 @@
 package persistence;
 
-import model.*;
+import model.Dish;
+import model.Order;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class JsonWriterTest extends JsonTest {
     //NOTE TO CPSC 210 STUDENTS: the strategy in designing tests for the JsonWriter is to
@@ -48,7 +50,7 @@ class JsonWriterTest extends JsonTest {
         try {
             Order order = new Order("Alex");
             order.addDish(new Dish("Hotpot", 1, 19.50, "this is hotpot"));
-            order.addDish(new Dish("fish",2,20.0, "this is fish"));
+            order.addDish(new Dish("fish", 2, 20.0, "this is fish"));
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralOrder.json");
             writer.open();
             writer.write(order);
@@ -59,8 +61,8 @@ class JsonWriterTest extends JsonTest {
             assertEquals("Alex", order.getName());
             List<Dish> dishes = order.getDishes();
             assertEquals(2, dishes.size());
-            checkThingy("Hotpot",1,19.50,"this is hotpot" , dishes.get(0));
-            checkThingy("fish",2,20.0, "this is fish", dishes.get(1));
+            checkThingy("Hotpot", 1, 19.50, "this is hotpot", dishes.get(0));
+            checkThingy("fish", 2, 20.0, "this is fish", dishes.get(1));
 
         } catch (IOException e) {
             fail("Exception should not have been thrown");
