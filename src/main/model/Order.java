@@ -1,10 +1,14 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 /**
  * Represents an order for the customer using OderingApp.
  */
+
 public class Order {
     private int account;
     private String customer;
@@ -118,5 +122,23 @@ public class Order {
             }
         }
         return false;
+    }
+
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("customer", customer);
+        json.put("dishes", dishesToJson());
+        return json;
+    }
+
+    private JSONArray dishesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Dish d : dishes) {
+            jsonArray.put(d.toJson());
+        }
+
+        return jsonArray;
     }
 }

@@ -1,0 +1,19 @@
+{
+  "dishes": [
+    {
+      "name": "Hotpot",
+      "count": "2",
+      "price": "19.5",
+      "flavour": "",
+      "ingredients":"There is some food"
+    },
+    {
+      "name": "Fish",
+      "count": "1",
+      "price": "20.0",
+      "flavour": "",
+      "ingredients":"There is some fish "
+    }
+  ],
+  "customer": "Alex"
+}

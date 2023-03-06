@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 /**
  * Represents a Dish with name, count, price that be used in Menus.
  */
@@ -8,10 +10,10 @@ public class Dish {
     private final String name;
     private int count;
     private final double price;
-    private String type;
+//    private String type;
     private String flavor;
     private String ingredients;
-    private String requirement;
+    //private String requirement;
 
 
     // EFFECTS:  Create a new dish with given name, given count, given price
@@ -89,4 +91,12 @@ public class Dish {
     }
 
 
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("count", count);
+        json.put("price",price);
+        json.put("ingredients",ingredients);
+        return json;
+    }
 }

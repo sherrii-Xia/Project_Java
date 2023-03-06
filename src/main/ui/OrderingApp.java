@@ -9,6 +9,7 @@ import java.util.Scanner;
  * Represents The Ordering System application.
  */
 public class OrderingApp {
+    private static final String JSON_STORE = "./data/TestReadEmptyOrder.json";
     private Menu menu;
     private Order order;
 
@@ -62,6 +63,8 @@ public class OrderingApp {
         System.out.println("\tredo -> redo the order");
         System.out.println("\tv -> view order & bill");
         System.out.println("\tm -> view the full menu again");
+        System.out.println("\ts -> save current order to file");
+        System.out.println("\tl -> load previous order from file");
         System.out.println("\tq -> check bill & quit");
     }
 
@@ -81,10 +84,26 @@ public class OrderingApp {
             viewMenu();
         } else if (c.equals("redo")) {
             cleanOrder();
+        } else if (c.equals("s")) {
+            saveOrder();
+        } else if (c.equals("l")) {
+            loadOrder();
         } else {
             System.out.println("Please enter the correct letter");
         }
         return true;
+
+    }
+
+    //MODIFIES: this
+    //EFFECT: load the order exists in data file.
+    public void loadOrder() {
+
+    }
+
+    //MODIFIES: this
+    //EFFECT: save the current order to data file.
+    public void  saveOrder() {
 
     }
 
