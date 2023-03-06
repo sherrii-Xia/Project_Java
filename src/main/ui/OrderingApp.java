@@ -2,14 +2,20 @@ package ui;
 
 import model.Dish;
 import model.Order;
+import persistence.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
 
 /**
  * Represents The Ordering System application.
  */
 public class OrderingApp {
     private static final String JSON_STORE = "./data/TestReadEmptyOrder.json";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
     private Menu menu;
     private Order order;
 
@@ -97,13 +103,26 @@ public class OrderingApp {
 
     //MODIFIES: this
     //EFFECT: load the order exists in data file.
-    public void loadOrder() {
-
+    private void  loadOrder() {
+        try {
+            order = jsonReader.read();
+            System.out.println("Loaded " + order.getName() + "'s order from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
     //MODIFIES: this
     //EFFECT: save the current order to data file.
     public void  saveOrder() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(order);
+            jsonWriter.close();
+            System.out.println("Saved " + order.getName() + "'s Order to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
 
     }
 
