@@ -11,8 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
-
-// Represents a reader that reads workroom from JSON data stored in file
+/**
+ * Represents a reader that reads workroom from JSON data stored in file
+ */
 public class JsonReader {
     private String source;
 
@@ -40,7 +41,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
-    // EFFECTS: parses workroom from JSON object and returns it
+    // EFFECTS: parses order from JSON object and returns it
     private Order parseWorkRoom(JSONObject jsonObject) {
         String customer = jsonObject.getString("customer");
         Order order = new Order(customer);
@@ -48,8 +49,8 @@ public class JsonReader {
         return order;
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    // MODIFIES: order
+    // EFFECTS: parses dishes from JSON object and adds them to order
     private void addDishes(Order order, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("dishes");
         for (Object json : jsonArray) {
@@ -58,8 +59,8 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // MODIFIES: order
+    // EFFECTS: parses dish from JSON object and adds it to order
     private void addDish(Order order, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         int count = jsonObject.getInt("count");

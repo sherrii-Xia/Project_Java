@@ -24,7 +24,7 @@ Y:  the order that customer made.
 
 
 Basically, customers can preorder the food they want via this application even though they are not physically in the restaurant
-This builds a practical preordering system that could be used in the real life, which motivates me. 
+This builds a practical pre-ordering system that could be used in the real life, which motivates me. 
 
 ## User Stories
 - As a user, I want to see the picture of the dish. 
@@ -32,7 +32,6 @@ This builds a practical preordering system that could be used in the real life, 
 - As a user, I want to select the food I want, and save it. 
 - As a user, I want to delete the dish I don't want.
 - As a user, I want to restart my order whenever I like 
-- As a user, I want to know the total amount of money the food I picked would cost. 
-- As a user, I want to customize the food (change flavor, adjust protion of ingredients)
-- As a user, I want to save my current order whem quiting the app
+- As a user, I want to know the total amount of money the food I picked would cost.
+- As a user, I want to save my current order when quiting the app
 - As a user, I want to load my previous order from a file 

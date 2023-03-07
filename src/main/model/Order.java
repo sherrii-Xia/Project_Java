@@ -6,12 +6,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * Represents an order for the customer using OderingApp.
+ * Represents an order for the customer using Ordering Application.
  */
 
 public class Order {
-    private int account;
     private String customer;
     private ArrayList<Dish> dishes;
 
@@ -126,6 +126,10 @@ public class Order {
     }
 
 
+
+
+
+    // EFFECTS: return the JSOMObject corresponds to current Order
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("customer", customer);
@@ -133,6 +137,7 @@ public class Order {
         return json;
     }
 
+    // EFFECTS: return the JSONArray corresponds to current dishes in Order
     private JSONArray dishesToJson() {
         JSONArray jsonArray = new JSONArray();
 

@@ -90,6 +90,7 @@ public class Dish {
     }
 
 
+    // EFFECTS: return JsonObject correspond to current Dish.
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

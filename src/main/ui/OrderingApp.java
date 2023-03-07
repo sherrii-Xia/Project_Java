@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Represents The Ordering System application.
  */
 public class OrderingApp {
-    private static final String JSON_STORE = "./data/TestReadEmptyOrder.json";
+    private static final String JSON_STORE = "./data/Order.json";
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     private Menu menu;
@@ -51,12 +51,14 @@ public class OrderingApp {
     //MODIFIES: this
     //EFFECT: initializes the menus and order.
     public void setup() {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         menu = new Menu();
-        order = new Order(customer);
         input = new Scanner(System.in);
         input.useDelimiter("\n");
         System.out.println("Enter your name to start ordering : ");
         customer = input.next();
+        order = new Order(customer);
         System.out.println("\nHello, " + customer + "!");
         System.out.println("Welcome to Hotpot Hotpot!");
     }
