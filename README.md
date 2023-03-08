@@ -35,3 +35,8 @@ This builds a practical pre-ordering system that could be used in the real life,
 - As a user, I want to know the total amount of money the food I picked would cost.
 - As a user, I want to save my current order when quiting the app
 - As a user, I want to load my previous order from a file 
+
+## Citation: 
+- Classes and corresponded test in persistence file refers to the demo project 
+  - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+  

@@ -77,7 +77,7 @@ public class Order {
     public void setDish(Dish dish, int num) {
         int index = 0;
         for (Dish current : dishes) {
-            if (current.getName() == dish.getName()) {
+            if (current.getName().equals(dish.getName())) {
                 current.setCount(num);
             }
             index++;
@@ -98,7 +98,6 @@ public class Order {
         return currentSum;
 
     }
-
 
     // EFFECTS: get the name of the customer
     public String getName() {
@@ -121,12 +120,10 @@ public class Order {
             if (current.getName() == d.getName()) {
                 return true;
             }
+
         }
         return false;
     }
-
-
-
 
 
     // EFFECTS: return the JSOMObject corresponds to current Order
