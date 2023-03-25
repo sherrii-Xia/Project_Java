@@ -29,12 +29,6 @@ public class OrderingAppGUI extends JFrame {
     private JPanel panel;
     private JPanel menuPanel;
     private JButton loginButton;
-    private JButton addButton;
-    private JButton removeButton;
-    private JButton viewButton;
-    private JButton saveButton;
-    private JButton displayButton;
-    private JButton quitButton;
 
 //    private J
     //TODO: DISPLAY THE MENUS, each prictur with the select bottnm
