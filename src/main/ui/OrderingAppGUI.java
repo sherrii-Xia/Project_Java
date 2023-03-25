@@ -37,7 +37,7 @@ public class OrderingAppGUI extends JFrame {
 
     java.util.List<JButton> buttons = new ArrayList<>();
     List<ImageIcon> icons;
-    JPanel menuPanel;
+    MenuUI menuPanel;
     JPanel functionbar = new JPanel(new FlowLayout());
     private JFrame menuframe;
     private JButton addButton;
@@ -131,8 +131,71 @@ public class OrderingAppGUI extends JFrame {
     private void displayDish() {
         menuPanel = new MenuUI(menu);
         menuframe.add(menuPanel, BorderLayout.CENTER);
+        addAndRemove();
 
 
+    }
+
+    //https://www.youtube.com/watch?v=OI-TFbHQhtA
+    private void addAndRemove() {
+        ActionListener addAndRemove = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DishButton o = (DishButton) e.getSource();
+                JFrame dishframe = new JFrame("Choose the Option");
+                addButton = new JButton("add the dish");
+                removeButton = new JButton("remove the dish");
+                dishframe.setVisible(true);
+                dishframe.setLocation(400, 500);
+                dishframe.setSize(200, 200);
+                dishframe.setLayout(new FlowLayout());
+                dishframe.add(addButton);
+                addDish(o, dishframe);
+                dishframe.add(removeButton);
+                removeDish(o, dishframe);
+
+            }
+        };
+
+        for (DishButton button : menuPanel.accessButton()) {
+            button.addActionListener(addAndRemove);
+
+        }
+
+    }
+
+    private void removeDish(DishButton button, JFrame frame) {
+        Dish d = menu.getDish(button.key);
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Boolean success = order.removeDish(d);
+                if (success) {
+                    JOptionPane.showMessageDialog(OrderingAppGUI.this,
+                            "Dish is removed successfully !");
+                } else {
+                    JOptionPane.showMessageDialog(OrderingAppGUI.this,
+                            "ERROR: Can not remove a dish not exits in order");
+                }
+                frame.setVisible(false);
+
+
+            }
+        });
+
+    }
+
+    private void addDish(DishButton button,JFrame frame) {
+        Dish d = menu.getDish(button.key);
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                order.addDish(d);
+                JOptionPane.showMessageDialog(OrderingAppGUI.this,
+                        "Dish is added successfully !");
+                frame.setVisible(false);
+            }
+        });
     }
 
     private void setupFunctionBar() {
@@ -163,7 +226,6 @@ public class OrderingAppGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 displayOrder(orderText);
                 orderView.setVisible(true);
-                orderView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
                 orderView.add(orderText);
@@ -223,13 +285,11 @@ public class OrderingAppGUI extends JFrame {
 
         viewButton.addActionListener(new ActionListener() {
             JFrame orderView = new JFrame("Current Order");
-            JTextArea orderText = new JTextArea();
-
             @Override
             public void actionPerformed(ActionEvent e) {
+                JTextArea orderText = new JTextArea();
                 displayOrder(orderText);
                 orderView.setVisible(true);
-                orderView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
                 orderView.add(orderText);

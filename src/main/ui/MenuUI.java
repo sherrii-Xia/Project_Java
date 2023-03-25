@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MenuUI extends JPanel {
     Menu menu;
-    List<DishButton> buttons = new ArrayList<>();
+    private List<DishButton> buttons = new ArrayList<>();
     List<JLabel> labels = new ArrayList<>();
     List<ImageIcon> icons = new ArrayList<>();
     List<JPanel> dishes = new ArrayList<>();
@@ -87,6 +87,10 @@ public class MenuUI extends JPanel {
         } catch (Exception ignored) {
             new Error("Not throwing ");
         }
+    }
+
+    public List<DishButton> accessButton() {
+        return buttons;
     }
 
 }

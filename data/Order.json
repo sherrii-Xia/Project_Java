@@ -1,4 +1,9 @@
 {
-    "dishes": [],
-    "customer": "sherry"
+    "dishes": [{
+        "price": 24,
+        "name": "Iberico Pork",
+        "count": 3,
+        "ingredients": "Fresh organic Iberico Pork"
+    }],
+    "customer": "lkasijf"
 }

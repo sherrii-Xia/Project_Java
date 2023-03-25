@@ -52,6 +52,7 @@ public class Order {
     public boolean removeDish(Dish dish) {
         int index = 0;
         boolean success = false;
+        int size = dishes.size();
         for (Dish current : dishes) {
             if (current.getName().equals(dish.getName())) {
                 int currentCount = current.getCount();
@@ -63,6 +64,7 @@ public class Order {
                     currentCount--;
                     current.setCount(currentCount);
                 }
+                break;
             }
             index++;
         }
