@@ -121,5 +121,11 @@ public class Menu {
 
     }
 
+    // EFFECTS: return the dish in total dish that is in the given index.
+    public List<Dish> getTotalDish() {
+        return totalDish;
+
+    }
+
 
 }
