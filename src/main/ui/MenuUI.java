@@ -24,7 +24,7 @@ public class MenuUI extends JPanel {
     private JPanel dish4;
 
     public MenuUI(Menu menu) {
-        super(new GridLayout(2, 2));
+        super(new GridLayout(3, 3));
         this.menu = menu;
         displayDish();
 
@@ -80,6 +80,10 @@ public class MenuUI extends JPanel {
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish2.jpg"))));
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish3.jpg"))));
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish4.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish5.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish6.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish7.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish8.jpg"))));
         } catch (Exception ignored) {
             new Error("Not throwing ");
         }

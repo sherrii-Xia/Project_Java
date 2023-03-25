@@ -120,7 +120,7 @@ public class OrderingAppGUI extends JFrame {
     private void setUpMenuFrame() {
         menuframe = new JFrame("Menu of the Restaurant");
         menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        menuframe.setSize(800, 600);
+        menuframe.setSize(1000, 800);
         menuframe.setLocation(400, 300);
         menuframe.setVisible(true);
         menuframe.setLayout(new BorderLayout());
