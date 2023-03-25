@@ -14,8 +14,10 @@ public class MenuUI extends JPanel {
     List<DishButton> buttons = new ArrayList<>();
     List<JLabel> labels = new ArrayList<>();
     List<ImageIcon> icons = new ArrayList<>();
+    List<JPanel> dishes = new ArrayList<>();
     JPanel menuPanel = new JPanel(new GridLayout(2, 2));
     JPanel functionbar = new JPanel(new FlowLayout());
+
     private JPanel dish1;
     private JPanel dish2;
     private JPanel dish3;
@@ -33,23 +35,23 @@ public class MenuUI extends JPanel {
         setupImageIcon();
         setButtonsAndLabels();
         initDish();
-        dish1.add(buttons.get(0), BorderLayout.CENTER);
-        dish1.add(labels.get(0), BorderLayout.SOUTH);
-        add(dish1);
-        dish2.add(buttons.get(1), BorderLayout.CENTER);
-        dish2.add(labels.get(1), BorderLayout.SOUTH);
-        add(dish2);
-        add(new JButton("DIsh 3"));
-        add(new JButton("DISH 4 "));
-        add(new JButton("DIsh 5"));
-        add(new JButton("DISH 6 "));
+        setDishPnal();
+    }
+
+    private void setDishPnal() {
+        JPanel current;
+        for (int i = 0; i < buttons.size(); i++) {
+            current = dishes.get(i);
+            current.add(buttons.get(i), BorderLayout.CENTER);
+            current.add(labels.get(i), BorderLayout.SOUTH);
+            add(current);
+        }
     }
 
     private void initDish() {
-        dish1 = new JPanel(new BorderLayout());
-        dish2 = new JPanel(new BorderLayout());
-        dish3 = new JPanel(new BorderLayout());
-        dish4 = new JPanel(new BorderLayout());
+        for (int i = 0; i < 12; i++) {
+            dishes.add(new JPanel(new BorderLayout()));
+        }
     }
 
     //TODO: SET ALL IMAGE BUTTON WITH KEY
