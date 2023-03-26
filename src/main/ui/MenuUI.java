@@ -84,6 +84,10 @@ public class MenuUI extends JPanel {
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish6.jpg"))));
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish7.jpg"))));
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish8.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish9.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish10.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish11.jpg"))));
+            icons.add(new ImageIcon(ImageIO.read(new File("./data/dish12.jpg"))));
         } catch (Exception ignored) {
             new Error("Not throwing ");
         }

@@ -282,12 +282,14 @@ public class OrderingAppGUI extends JFrame {
 
     //TODO: 一个弹窗 print 菜单
     private void viewBill() {
+        JFrame orderView = new JFrame("Current Order");
+        JTextArea orderText = new JTextArea();
 
         viewButton.addActionListener(new ActionListener() {
-            JFrame orderView = new JFrame("Current Order");
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                JTextArea orderText = new JTextArea();
+                orderText.setText("");
                 displayOrder(orderText);
                 orderView.setVisible(true);
                 orderView.setSize(400, 300);
