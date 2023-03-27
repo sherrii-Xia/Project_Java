@@ -48,6 +48,7 @@ public class OrderingAppGUI extends JFrame {
     private JButton displayButton;
     private JButton quitButton;
     private JButton finalQuit = new JButton("quit");
+    private JButton redoButton;
 
 //    private J
     //TODO: DISPLAY THE MENUS, each prictur with the select bottnm
@@ -121,7 +122,7 @@ public class OrderingAppGUI extends JFrame {
         menuframe = new JFrame("Menu of the Restaurant");
         menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuframe.setSize(1000, 800);
-        menuframe.setLocation(400, 300);
+        menuframe.setLocation(300, 300);
         menuframe.setVisible(true);
         menuframe.setLayout(new BorderLayout());
         displayDish();
@@ -146,7 +147,7 @@ public class OrderingAppGUI extends JFrame {
                 addButton = new JButton("add the dish");
                 removeButton = new JButton("remove the dish");
                 dishframe.setVisible(true);
-                dishframe.setLocation(400, 500);
+                dishframe.setLocation(300, 300);
                 dishframe.setSize(200, 200);
                 dishframe.setLayout(new FlowLayout());
                 dishframe.add(addButton);
@@ -207,13 +208,28 @@ public class OrderingAppGUI extends JFrame {
         loadBill();
         quitButton = new JButton("check bill & quit");
         quit();
-
+        redoButton = new JButton("redo order");
+        redo();
         functionbar.add(viewButton);
         functionbar.add(saveButton);
         functionbar.add(loadButton);
+        functionbar.add(redoButton);
         functionbar.add(quitButton);
         menuframe.add(functionbar, BorderLayout.SOUTH);
 
+
+    }
+
+    private void redo() {
+        redoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                order = new Order(order.getName());
+                JOptionPane.showMessageDialog(OrderingAppGUI.this,
+                        "Order is redone successfully !");
+
+            }
+        });
 
     }
 
@@ -306,10 +322,10 @@ public class OrderingAppGUI extends JFrame {
     private void displayOrder(JTextArea orderText) {
 
         orderText.append("The current summary of the Order");
-        orderText.append("\nDish                               Cost");
+        orderText.append("\nDish                               \tCost");
         for (Dish current : order.getDishes()) {
             orderText.append("\n " + current.getName());
-            orderText.append("\n" + current.getPrice() * current.getCount());
+            orderText.append("\n\t\t\t" + current.getPrice() * current.getCount());
 
             if (current.getCount() > 1) {
                 orderText.append("\n\t$" + current.getCount() + " @ $" + current.getPrice() + " each");

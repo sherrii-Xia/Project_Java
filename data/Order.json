@@ -1,9 +1,17 @@
 {
-    "dishes": [{
-        "price": 24,
-        "name": "Iberico Pork",
-        "count": 3,
-        "ingredients": "Fresh organic Iberico Pork"
-    }],
-    "customer": "lkasijf"
+    "dishes": [
+        {
+            "price": 28,
+            "name": "Sliced US Beef",
+            "count": 1,
+            "ingredients": "Fresh Sliced US Beef"
+        },
+        {
+            "price": 38,
+            "name": "Signature Beef",
+            "count": 1,
+            "ingredients": "A5 Signature Wagyu"
+        }
+    ],
+    "customer": "ieufhas"
 }
