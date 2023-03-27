@@ -36,7 +36,18 @@ This builds a practical pre-ordering system that could be used in the real life,
 - As a user, I want to save my current order when quiting the app
 - As a user, I want to load my previous order from a file 
 
+## Instructions for Grader
+- You can add the dish to an order by clicking the image of Dish, then click "add the dish" button
+- You can remove the dish from an order by clicking the image of Dish, then click "remove the dish" button
+- You can restart order by clicking "redo order" button of Menu Main Frame.
+- You can check total amount of money of order by  clicking "view bill" button of Menu Main Frame. 
+- You can locate my visual component by the images for each dish in Menu Main Frame. 
+- You can save the state of my application by clicking "Save current order" button of Menu Main Frame.
+- You can reload the state of my application by clicking "load previous order" button of Menu Main Frame. 
+
 ## Citation: 
-- Classes and corresponded test in persistence file refers to the demo project 
+- Classes and corresponded test in persistence file refers to the demo project
+  - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+- Load and Save method refers to WorkRoom project
   - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
   

@@ -72,7 +72,9 @@ public class MenuUI extends JPanel {
         for (ImageIcon icon : icons) {
             String dishName = menu.getDish(key).getName();
             buttons.add(new DishButton(key, icon));
-            labels.add(new JLabel("No." + key + ": " + dishName));
+            JLabel jl = new JLabel("No." + key + ": " + dishName);
+            jl.setFont(new Font("Serif", Font.ITALIC, 16));
+            labels.add(jl);
             key++;
         }
 

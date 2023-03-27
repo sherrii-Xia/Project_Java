@@ -18,8 +18,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
- * Represent GUI of Ordering App*/
+ * Represent GUI of Ordering App
+ */
 
 public class OrderingAppGUI extends JFrame {
     private static final String JSON_STORE = "./data/Order.json";
@@ -81,6 +83,7 @@ public class OrderingAppGUI extends JFrame {
         try {
             buttonIcon = ImageIO.read(new File("./data/hotpot.jpg"));
             loginButton = new JButton("Create an order for Hotpot Hotpot !", new ImageIcon(buttonIcon));
+            loginButton.setFont(new Font("Serif", Font.ITALIC, 24));
         } catch (Exception ignored) {
             // pass
         }
@@ -146,6 +149,8 @@ public class OrderingAppGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DishButton o = (DishButton) e.getSource();
+                Dish dish = menu.getDish(o.key);
+                JTextArea inreg = renderIngret(dish);
                 JFrame dishframe = new JFrame("Choose the Option");
                 addButton = new JButton("add the dish");
                 removeButton = new JButton("remove the dish");
@@ -153,6 +158,7 @@ public class OrderingAppGUI extends JFrame {
                 dishframe.setLocation(300, 300);
                 dishframe.setSize(200, 200);
                 dishframe.setLayout(new FlowLayout());
+                dishframe.add(inreg);
                 dishframe.add(addButton);
                 addDish(o, dishframe);
                 dishframe.add(removeButton);
@@ -166,6 +172,19 @@ public class OrderingAppGUI extends JFrame {
 
         }
 
+    }
+
+    // MODIFES: this
+    //EFFECT: DISPLAY Ingrrdients in Dish Frame
+    //REFER TO: https://stackoverflow.com/questions/4019981/auto-end-line-in-jtextarea
+    private JTextArea renderIngret(Dish dish) {
+        JTextArea ingret = new JTextArea("The ingredient :\n" + dish.getIngredients());
+        ingret.setSize(200,100);
+        ingret.setFont(new Font("Serif", Font.ITALIC, 16));
+        ingret.setLineWrap(true);
+        ingret.setWrapStyleWord(true);
+        ingret.setEditable(false);
+        return  ingret;
     }
 
     // MODIFIES: this
@@ -193,7 +212,7 @@ public class OrderingAppGUI extends JFrame {
 
     // MODIFIES: this
     // EFFECTS:  add Dish to the order when add button is clicked.
-    private void addDish(DishButton button,JFrame frame) {
+    private void addDish(DishButton button, JFrame frame) {
         Dish d = menu.getDish(button.key);
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -258,15 +277,15 @@ public class OrderingAppGUI extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                displayOrder(orderText,"The final summary of the Order");
+                displayOrder(orderText, "The final summary of the Order");
                 orderView.setVisible(true);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
-                orderView.add(orderText,BorderLayout.CENTER);
+                orderView.add(orderText, BorderLayout.CENTER);
                 downBar.add(finalQuit);
                 downBar.add(saveButton);
-                orderView.add(topBar,BorderLayout.NORTH);
-                orderView.add(downBar,BorderLayout.SOUTH);
+                orderView.add(topBar, BorderLayout.NORTH);
+                orderView.add(downBar, BorderLayout.SOUTH);
                 menuframe.setVisible(false);
                 saveBill();
                 realquit();
@@ -331,13 +350,15 @@ public class OrderingAppGUI extends JFrame {
     private void viewBill() {
         JFrame orderView = new JFrame("Current Order");
         JTextArea orderText = new JTextArea();
+        orderText.setFont(new Font("Serif", Font.ITALIC, 16));
 
         viewButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 orderText.setText("");
-                displayOrder(orderText,"The current summary of the Order");
+                displayOrder(orderText, "The current summary of the Order");
+                orderText.setEditable(false);
                 orderView.setVisible(true);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
@@ -353,7 +374,7 @@ public class OrderingAppGUI extends JFrame {
 
     // MODIFIES: orderText
     // EFFECTS: Display the order in orderText.
-    private void displayOrder(JTextArea orderText,String title) {
+    private void displayOrder(JTextArea orderText, String title) {
 
         orderText.append(title);
         orderText.append("\nDish                               \t\tCost");
