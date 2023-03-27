@@ -8,6 +8,9 @@ import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Represents Mean Panel of GUI.
+ */
 
 public class MenuUI extends JPanel {
     Menu menu;
@@ -23,6 +26,8 @@ public class MenuUI extends JPanel {
     private JPanel dish3;
     private JPanel dish4;
 
+
+    // EFFECTS: Initial the Menu Panel
     public MenuUI(Menu menu) {
         super(new GridLayout(3, 3));
         this.menu = menu;
@@ -31,14 +36,18 @@ public class MenuUI extends JPanel {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: Diplay the dish in mean with accoring image & name
     private void displayDish() {
         setupImageIcon();
         setButtonsAndLabels();
         initDish();
-        setDishPnal();
+        setDishPanel();
     }
 
-    private void setDishPnal() {
+    // MODIFIES: this
+    // EFFECTS: set up DishPanel, add it to this
+    private void setDishPanel() {
         JPanel current;
         for (int i = 0; i < buttons.size(); i++) {
             current = dishes.get(i);
@@ -48,13 +57,16 @@ public class MenuUI extends JPanel {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: Initial Dish button
     private void initDish() {
         for (int i = 0; i < 12; i++) {
             dishes.add(new JPanel(new BorderLayout()));
         }
     }
 
-    //TODO: SET ALL IMAGE BUTTON WITH KEY
+    // MODIFIES: this
+    // EFFECTS: Set up all button and labels with according
     private void setButtonsAndLabels() {
         int key = 1;
         for (ImageIcon icon : icons) {
@@ -65,8 +77,10 @@ public class MenuUI extends JPanel {
         }
 
     }
-    //TODO: SET PANEL FOR EVERY DISH
 
+
+    // MODIFIES: this
+    // EFFECTS: Set up panel for every dish
     private void setDish(int key, JPanel dishPanel) {
         Dish currentDish = menu.getDish(key);
         dishPanel.add(new DishButton(key, icons.get(key)));
@@ -74,6 +88,8 @@ public class MenuUI extends JPanel {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: Loading Image Icons from data.
     private void setupImageIcon() {
         try {
             icons.add(new ImageIcon(ImageIO.read(new File("./data/dish1.jpg"))));
@@ -93,6 +109,8 @@ public class MenuUI extends JPanel {
         }
     }
 
+
+    // EFFECTS: return the buttons
     public List<DishButton> accessButton() {
         return buttons;
     }

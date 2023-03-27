@@ -18,7 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * Represent GUI of Ordering App*/
 
 public class OrderingAppGUI extends JFrame {
     private static final String JSON_STORE = "./data/Order.json";
@@ -50,11 +51,12 @@ public class OrderingAppGUI extends JFrame {
     private JButton finalQuit = new JButton("quit");
     private JButton redoButton;
 
-//    private J
+
     //TODO: DISPLAY THE MENUS, each prictur with the select bottnm
     //Select bottom  will give the decription + add/remove
     //MENU
 
+    //EFFECTS: Set up Ordering App GUI
     public OrderingAppGUI() {
         super("The Ordering App");
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -67,16 +69,13 @@ public class OrderingAppGUI extends JFrame {
         setVisible(true);
         panel = new JPanel();
         add(panel);
-        setButton(); //TODO : THE LOGIN of the order
-        setOrder(); //TODO: THE BUTTON OF ORDER +
+        setButton();
 
 
     }
 
-    private void setOrder() {
-    }
-
-
+    // MODIFIES: this
+    // EFFECTS: SetUp Buttons for User login
     private void setButton() {
         BufferedImage buttonIcon;
         try {
@@ -86,7 +85,6 @@ public class OrderingAppGUI extends JFrame {
             // pass
         }
 
-//        JLabel jl = new JLabel("Create an order for Hotpot Hotpot !");
         loginButton.setVerticalTextPosition(JButton.BOTTOM);
         loginButton.setHorizontalTextPosition(JButton.CENTER);
         loginButton.setBorder(BorderFactory.createEmptyBorder());
@@ -96,11 +94,12 @@ public class OrderingAppGUI extends JFrame {
         panel.setLayout(boxLayout);
         panel.setBorder(new EmptyBorder(new Insets(150, 200, 150, 200)));
         panel.add(loginButton);
-//        panel.add(jl);
         pack();
 
     }
 
+    // MODIFIES: this
+    // EFFECTS:When the Login button is clicked, show dialog and let user input their name.
     private void login() {
         loginButton.addActionListener(new ActionListener() {
             @Override
@@ -111,13 +110,13 @@ public class OrderingAppGUI extends JFrame {
                         "Hello " + userName + "!\n" + "Welcome to HOTPOT HOTPOT!");
                 setVisible(false);
                 setUpMenuFrame();
-
             }
         });
     }
 
 
-    //TODO: Menu frame.
+    // MODIFIES: this
+    // EFFECTS:Setting up the menu Frame
     private void setUpMenuFrame() {
         menuframe = new JFrame("Menu of the Restaurant");
         menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,6 +128,8 @@ public class OrderingAppGUI extends JFrame {
         setupFunctionBar();
     }
 
+    // MODIFIES: this
+    // EFFECTS:Display the dish in the menu with icon
     private void displayDish() {
         menuPanel = new MenuUI(menu);
         menuframe.add(menuPanel, BorderLayout.CENTER);
@@ -137,7 +138,9 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
-    //https://www.youtube.com/watch?v=OI-TFbHQhtA
+    // MODIFIES: this
+    // EFFECTS:Display the dish in the menu with icon
+    // Method refer to :https://www.youtube.com/watch?v=OI-TFbHQhtA
     private void addAndRemove() {
         ActionListener addAndRemove = new ActionListener() {
             @Override
@@ -165,6 +168,8 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS:  remove the dish when remove Button is clicked
     private void removeDish(DishButton button, JFrame frame) {
         Dish d = menu.getDish(button.key);
         removeButton.addActionListener(new ActionListener() {
@@ -186,6 +191,8 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS:  add Dish to the order when add button is clicked.
     private void addDish(DishButton button,JFrame frame) {
         Dish d = menu.getDish(button.key);
         addButton.addActionListener(new ActionListener() {
@@ -199,6 +206,8 @@ public class OrderingAppGUI extends JFrame {
         });
     }
 
+    // MODIFIES: this
+    // EFFECTS:  Setting up the function bar with viewButton, saveButton, loadButton,and quitBUtton.
     private void setupFunctionBar() {
         viewButton = new JButton("view order & bill");
         viewBill();
@@ -220,6 +229,9 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+
+    // MODIFIES: this
+    // EFFECTS:  redo the order when redoButton is clicked.
     private void redo() {
         redoButton.addActionListener(new ActionListener() {
             @Override
@@ -233,6 +245,8 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS:  quit the Ordering Application when quit button is clicked.
     private void quit() {
         JFrame orderView = new JFrame("Exit Windows");
         orderView.setLayout(new BorderLayout());
@@ -260,6 +274,9 @@ public class OrderingAppGUI extends JFrame {
         });
     }
 
+
+    // MODIFIES: this
+    // EFFECTS:  terminate the program when finalQuit button is clicked.
     private void realquit() {
         finalQuit.addActionListener(new ActionListener() {
             @Override
@@ -270,6 +287,9 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+
+    // MODIFIES: this
+    // EFFECTS:  loading the previous bill when loadBution is clicked.
     private void loadBill() {
 
         loadButton.addActionListener(new ActionListener() {
@@ -285,6 +305,9 @@ public class OrderingAppGUI extends JFrame {
         });
     }
 
+
+    // MODIFIES: this
+    // EFFECTS:  save Bill when the SaveBill is clicked.
     private void saveBill() {
         saveButton.addActionListener(new ActionListener() {
             @Override
@@ -303,7 +326,8 @@ public class OrderingAppGUI extends JFrame {
         });
     }
 
-    //TODO: 一个弹窗 print 菜单
+    // MODIFIES: this
+    // EFFECTS:  view the current order with total cost when viewButton is clicked.
     private void viewBill() {
         JFrame orderView = new JFrame("Current Order");
         JTextArea orderText = new JTextArea();
@@ -326,6 +350,9 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
+
+    // MODIFIES: orderText
+    // EFFECTS: Display the order in orderText.
     private void displayOrder(JTextArea orderText,String title) {
 
         orderText.append(title);
@@ -338,7 +365,7 @@ public class OrderingAppGUI extends JFrame {
                 orderText.append("\n\t$" + current.getCount() + " @ $" + current.getPrice() + " each");
             }
         }
-//
+
         orderText.append("\nThe total Amount : " + "$" + order.getTotalAmount());
     }
 
