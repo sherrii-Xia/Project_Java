@@ -350,7 +350,7 @@ public class OrderingAppGUI extends JFrame {
     private void viewBill() {
         JFrame orderView = new JFrame("Current Order");
         JTextArea orderText = new JTextArea();
-        orderText.setFont(new Font("Serif", Font.ITALIC, 16));
+        orderText.setFont(new Font("Serif", Font.ITALIC, 15));
 
         viewButton.addActionListener(new ActionListener() {
 
@@ -360,7 +360,7 @@ public class OrderingAppGUI extends JFrame {
                 displayOrder(orderText, "The current summary of the Order");
                 orderText.setEditable(false);
                 orderView.setVisible(true);
-                orderView.setSize(400, 300);
+                orderView.setSize(400, 400);
                 orderView.setLocation(400, 300);
                 orderView.add(orderText);
 
@@ -375,7 +375,7 @@ public class OrderingAppGUI extends JFrame {
     // MODIFIES: orderText
     // EFFECTS: Display the order in orderText.
     private void displayOrder(JTextArea orderText, String title) {
-
+        orderText.setEditable(false);
         orderText.append(title);
         orderText.append("\nDish                               \t\tCost");
         for (Dish current : order.getDishes()) {
