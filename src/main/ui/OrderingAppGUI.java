@@ -234,21 +234,28 @@ public class OrderingAppGUI extends JFrame {
     }
 
     private void quit() {
+        JFrame orderView = new JFrame("Exit Windows");
+        orderView.setLayout(new BorderLayout());
+        JTextArea orderText = new JTextArea();
+        JLabel topBar = new JLabel("Thanks for visiting Hotpot Hotpot!");
+        JPanel downBar = new JPanel(new FlowLayout());
         quitButton.addActionListener(new ActionListener() {
-            JFrame orderView = new JFrame();
-            JTextArea orderText = new JTextArea();
+
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                displayOrder(orderText);
+                displayOrder(orderText,"The final summary of the Order");
                 orderView.setVisible(true);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
-                orderView.add(orderText);
-                orderView.add(finalQuit);
+                orderView.add(orderText,BorderLayout.CENTER);
+                downBar.add(finalQuit);
+                downBar.add(saveButton);
+                orderView.add(topBar,BorderLayout.NORTH);
+                orderView.add(downBar,BorderLayout.SOUTH);
                 menuframe.setVisible(false);
+                saveBill();
                 realquit();
-//                System.exit(0);
             }
         });
     }
@@ -306,7 +313,7 @@ public class OrderingAppGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 orderText.setText("");
-                displayOrder(orderText);
+                displayOrder(orderText,"The current summary of the Order");
                 orderView.setVisible(true);
                 orderView.setSize(400, 300);
                 orderView.setLocation(400, 300);
@@ -319,13 +326,13 @@ public class OrderingAppGUI extends JFrame {
 
     }
 
-    private void displayOrder(JTextArea orderText) {
+    private void displayOrder(JTextArea orderText,String title) {
 
-        orderText.append("The current summary of the Order");
-        orderText.append("\nDish                               \tCost");
+        orderText.append(title);
+        orderText.append("\nDish                               \t\tCost");
         for (Dish current : order.getDishes()) {
             orderText.append("\n " + current.getName());
-            orderText.append("\n\t\t\t" + current.getPrice() * current.getCount());
+            orderText.append("\n\t\t\t$" + current.getPrice() * current.getCount());
 
             if (current.getCount() > 1) {
                 orderText.append("\n\t$" + current.getCount() + " @ $" + current.getPrice() + " each");
