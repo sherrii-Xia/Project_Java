@@ -12,7 +12,6 @@ public class Dish {
     private final double price;
     private String flavor;
     private String ingredients;
-    //private String requirement;
 
 
     // EFFECTS:  Create a new dish with given name, given count, given price

@@ -13,7 +13,6 @@ public class Menu {
     private List<Dish> boilingPot;
     private List<Dish> meats;
     private List<Dish> leafVegetables;
-    private String ingret;
 
 
     // MODIFIES: this
