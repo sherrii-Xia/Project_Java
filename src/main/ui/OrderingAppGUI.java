@@ -287,7 +287,6 @@ public class OrderingAppGUI extends JFrame {
                 orderView.add(topBar, BorderLayout.NORTH);
                 orderView.add(downBar, BorderLayout.SOUTH);
                 menuframe.setVisible(false);
-                saveBill();
                 realquit();
             }
         });
