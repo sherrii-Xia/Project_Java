@@ -41,7 +41,7 @@ public class Order {
                 index++;
             }
         }
-
+        EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + "is added to order"));
     }
 
     // REQUIRES: Dish has to be exits in the dishes list
@@ -68,6 +68,9 @@ public class Order {
             }
             index++;
         }
+        if (success) {
+            EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + "is removed  from order"));
+        }
         return success;
 
     }
@@ -84,6 +87,7 @@ public class Order {
             }
             index++;
         }
+        EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + "been set to count" + num));
     }
 
 
@@ -98,6 +102,14 @@ public class Order {
             currentSum += (double) current.getCount() * current.getPrice();
         }
         return currentSum;
+
+    }
+
+    public void cleanOrder(String name) {
+        EventLog.getInstance().logEvent(new Event("Order is cleaned"));
+        dishes = new ArrayList<>();
+        this.customer = name;
+
 
     }
 

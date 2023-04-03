@@ -1,6 +1,8 @@
 package ui;
 
 import model.Dish;
+import model.Event;
+import model.EventLog;
 import model.Order;
 import persistence.*;
 
@@ -175,7 +177,9 @@ public class OrderingApp {
     //MODIFIES: this
     //EFFECT: clean up all dishes been added to the order
     public void cleanOrder() {
-        order = new Order(customer);
+        order.cleanOrder(customer);
+
+
     }
 
 

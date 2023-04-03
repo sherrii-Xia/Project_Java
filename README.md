@@ -50,4 +50,29 @@ This builds a practical pre-ordering system that could be used in the real life,
   - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 - Load and Save method refers to WorkRoom project
   - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
-  
+
+
+## Phase 4: Task 2
+
+Mon Apr 03 11:05:00 PDT 2023
+Dish: Aussie Sliced Lamb Shoulderis added to order
+
+
+Mon Apr 03 11:05:02 PDT 2023
+Dish: Sliced US Beefis added to order
+
+
+Mon Apr 03 11:05:04 PDT 2023
+Dish: Signature Beefis added to order
+
+
+Mon Apr 03 11:05:06 PDT 2023
+Dish: Cilantrois added to order
+
+
+Mon Apr 03 11:05:08 PDT 2023
+Dish: Cilantrois removed from order
+
+
+Mon Apr 03 11:05:11 PDT 2023
+Dish: Pork Stomach and Chicken Soupis added to order

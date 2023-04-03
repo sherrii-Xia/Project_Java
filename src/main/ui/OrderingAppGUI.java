@@ -1,6 +1,8 @@
 package ui;
 
 import model.Dish;
+import model.Event;
+import model.EventLog;
 import model.Order;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -299,12 +301,19 @@ public class OrderingAppGUI extends JFrame {
         finalQuit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                printEvents(EventLog.getInstance());
                 System.exit(0);
             }
         });
 
     }
 
+    public void printEvents(EventLog el) {
+        for (Event event : el) {
+            System.out.println(event.toString() + "\n\n");
+        }
+    }
 
     // MODIFIES: this
     // EFFECTS:  loading the previous bill when loadBution is clicked.

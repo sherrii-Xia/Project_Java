@@ -116,6 +116,16 @@ public class OrderTest {
 
 
     @Test
+    public void cleanOrderTest() {
+        DuplicateOrder.cleanOrder("New name");
+        assertEquals("New name",DuplicateOrder.getName());
+        assertEquals(new ArrayList<>(), DuplicateOrder.getDishes());
+        assertEquals(0, DuplicateOrder.getNumDish());
+
+
+    }
+
+    @Test
     public void getTotalAmount() {
         assertEquals(0.0, emptyOrder.getTotalAmount());
         emptyOrder.addDish(tomato);
