@@ -82,18 +82,18 @@ Dish: Pork Stomach and Chicken Soupis added to order
 ![img.png](img.png)
 
 ### Refactor idea
-First, The OrderingAppGUI can be restructured by extract setMenuFrame() from login() method  and call setMenuFrame()  
-from the constructor rather being a part of login() because setting Menus Frame is a part of Initializing process of  
-application rather than doing functionality of login.  If we extract setMenuFrame() this way, the code is more readable  
+First, The OrderingAppGUI can be restructured by extract setMenuFrame() from login() method  and call setMenuFrame()
+from the constructor rather being a part of login() because setting Menus Frame is a part of Initializing process of
+application rather than doing functionality of login.  If we extract setMenuFrame() this way, the code is more readable
 and reflect the behaviour of what is going on.  
 
 
 
-Second, by looking at UML, we can observe that  OrderingApp, OrderingAppGUI, and MenuUI have a field for menu   
-(association of menu). 3 classes are accessing the same Menu Object all the time. There is no modification  
-or change of the menu object once it has been constructed. Also, the meaning of Menu Class is to create a menu for customers  
-who are ordering. Therefore, to clean up the messy code and make code easier, we can make the menu class a singleton  
-class, letting all other classes accessing directly. Since the menu can not change after the ordering process begins, the singleton  
+Second, by looking at UML, we can observe that  OrderingApp, OrderingAppGUI, and MenuUI have a field for menu
+(association of menu). 3 classes are accessing the same Menu Object all the time. There is no modification
+or change of the menu object once it has been constructed. Also, the meaning of Menu Class is to create a menu for customers
+who are ordering. Therefore, to clean up the messy code and make code easier, we can make the menu class a singleton
+class, letting all other classes accessing directly. Since the menu can not change after the ordering process begins, the singleton
 field that stores the reference of the menu object can be a public final field. (or private final field) 
 
 
