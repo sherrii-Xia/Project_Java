@@ -2,20 +2,19 @@
 
 ## Project description 
 
-What will the application do?
-
+What will the application do?  
 This application is an online ordering system for restaurants.
 It allows customers to order takeaway or dine in remotely.
 Basically, customers can preorder the food they want via this application even
 though they are not physically in the restaurant
 
-Who will use it?
+Who will use it?  
 Customers can use this to preview the menu，
 to let them view the menu,
 select & select the food they want, and output the bill of that order. 
 
 
-Why is this project of interest to you?
+Why is this project of interest to you?  
 This builds a practical preorder system that could be used in the real life,
 which motivates me.
 
@@ -54,30 +53,50 @@ This builds a practical pre-ordering system that could be used in the real life,
 
 ## Phase 4: Task 2
 
-Mon Apr 03 11:05:00 PDT 2023
+
+Mon Apr 03 11:05:00 PDT 2023  
 Dish: Aussie Sliced Lamb Shoulderis added to order
 
 
-Mon Apr 03 11:05:02 PDT 2023
+Mon Apr 03 11:05:02 PDT 2023  
 Dish: Sliced US Beefis added to order
 
 
-Mon Apr 03 11:05:04 PDT 2023
+Mon Apr 03 11:05:04 PDT 2023  
 Dish: Signature Beefis added to order
 
 
-Mon Apr 03 11:05:06 PDT 2023
+Mon Apr 03 11:05:06 PDT 2023  
 Dish: Cilantrois added to order
 
 
-Mon Apr 03 11:05:08 PDT 2023
+Mon Apr 03 11:05:08 PDT 2023  
 Dish: Cilantrois removed from order
 
 
-Mon Apr 03 11:05:11 PDT 2023
+Mon Apr 03 11:05:11 PDT 2023  
 Dish: Pork Stomach and Chicken Soupis added to order
 
 
 ## Phase  4: Task 3
 ![img.png](img.png)
+
+### Refactor idea
+First, The OrderingAppGUI can be restructured by extract setMenuFrame() from login() method  and call setMenuFrame()  
+from the constructor rather being a part of login() because setting Menus Frame is a part of Initializing process of  
+application rather than doing functionality of login.  If we extract setMenuFrame() this way, the code is more readable  
+and reflect the behaviour of what is going on.  
+
+
+
+Second, by looking at UML, we can observe that  OrderingApp, OrderingAppGUI, and MenuUI have a field for menu   
+(association of menu). 3 classes are accessing the same Menu Object all the time. There is no modification  
+or change of the menu object once it has been constructed. Also, the meaning of Menu Class is to create a menu for customers  
+who are ordering. Therefore, to clean up the messy code and make code easier, we can make the menu class a singleton  
+class, letting all other classes accessing directly. Since the menu can not change after the ordering process begins, the singleton  
+field that stores the reference of the menu object can be a public final field. (or private final field) 
+
+
+
+
 

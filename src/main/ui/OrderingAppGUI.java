@@ -167,7 +167,7 @@ public class OrderingAppGUI extends JFrame {
     }
 
     // MODIFES: this
-    //EFFECT: DISPLAY Ingrrdients in Dish Frame
+    //EFFECT: DISPLAY Ingredients in Dish Frame
     //REFER TO: https://stackoverflow.com/questions/4019981/auto-end-line-in-jtextarea
     private JTextArea renderIngret(Dish dish) {
         JTextArea ingret = new JTextArea("The ingredient :\n" + dish.getIngredients());
