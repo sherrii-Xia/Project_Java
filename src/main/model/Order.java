@@ -105,6 +105,8 @@ public class Order {
 
     }
 
+     //MODIFIES: this
+     //EFFECTS: clean up the selected dish in the Order
     public void cleanOrder(String name) {
         EventLog.getInstance().logEvent(new Event("Order is cleaned"));
         dishes = new ArrayList<>();

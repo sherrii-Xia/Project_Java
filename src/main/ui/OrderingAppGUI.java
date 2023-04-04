@@ -17,9 +17,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Represent GUI of Ordering App
@@ -32,16 +29,12 @@ public class OrderingAppGUI extends JFrame {
     private Menu menu;
     private Order order;
 
-    private Scanner input;
-    private String customer;
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
     private JPanel panel;
     private JButton loginButton;
 
 
-    java.util.List<JButton> buttons = new ArrayList<>();
-    List<ImageIcon> icons;
     MenuUI menuPanel;
     JPanel functionbar = new JPanel(new FlowLayout());
     private JFrame menuframe;
@@ -50,15 +43,12 @@ public class OrderingAppGUI extends JFrame {
     private JButton viewButton;
     private JButton saveButton;
     private JButton loadButton;
-    private JButton displayButton;
     private JButton quitButton;
     private JButton finalQuit = new JButton("quit");
     private JButton redoButton;
 
 
-    //TODO: DISPLAY THE MENUS, each prictur with the select bottnm
-    //Select bottom  will give the decription + add/remove
-    //MENU
+
 
     //EFFECTS: Set up Ordering App GUI
     public OrderingAppGUI() {
