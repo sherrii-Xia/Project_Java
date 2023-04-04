@@ -247,7 +247,7 @@ public class OrderingAppGUI extends JFrame {
         redoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                order = new Order(order.getName());
+                order.cleanOrder(order.getName());
                 JOptionPane.showMessageDialog(OrderingAppGUI.this,
                         "Order is redone successfully !");
 
