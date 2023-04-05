@@ -1,9 +1,9 @@
 {
     "dishes": [{
-        "price": 38,
-        "name": "Signature Beef",
-        "count": 1,
-        "ingredients": "A5 Signature Wagyu"
+        "price": 24,
+        "name": "Iberico Pork",
+        "count": 2,
+        "ingredients": "Fresh organic Iberico Pork"
     }],
-    "customer": "lsijef"
+    "customer": "ahio"
 }

@@ -41,7 +41,7 @@ public class Order {
                 index++;
             }
         }
-        EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + "is added to order"));
+        EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + " is added to order"));
     }
 
     // REQUIRES: Dish has to be exits in the dishes list
@@ -69,7 +69,7 @@ public class Order {
             index++;
         }
         if (success) {
-            EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + "is removed  from order"));
+            EventLog.getInstance().logEvent(new Event("Dish: " + dish.getName() + " is removed  from order"));
         }
         return success;
 
