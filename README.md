@@ -53,29 +53,29 @@ This builds a practical pre-ordering system that could be used in the real life,
 
 ## Phase 4: Task 2
 
-
-Mon Apr 03 11:05:00 PDT 2023  
-Dish: Aussie Sliced Lamb Shoulderis added to order
-
-
-Mon Apr 03 11:05:02 PDT 2023  
-Dish: Sliced US Beefis added to order
+Wed Apr 05 14:08:49 PDT 2023  
+Dish: Sliced US Beef is added to order
 
 
-Mon Apr 03 11:05:04 PDT 2023  
-Dish: Signature Beefis added to order
+Wed Apr 05 14:08:55 PDT 2023  
+Dish: Sliced US Beef is added to order
 
 
-Mon Apr 03 11:05:06 PDT 2023  
-Dish: Cilantrois added to order
+Wed Apr 05 14:08:57 PDT 2023  
+Dish: Aussie Sliced Lamb Shoulder is added to order
 
 
-Mon Apr 03 11:05:08 PDT 2023  
-Dish: Cilantrois removed from order
+Wed Apr 05 14:09:00 PDT 2023  
+Dish: Cilantro is added to order
 
 
-Mon Apr 03 11:05:11 PDT 2023  
-Dish: Pork Stomach and Chicken Soupis added to order
+Wed Apr 05 14:09:04 PDT 2023  
+Order is cleaned
+
+
+Wed Apr 05 14:09:06 PDT 2023  
+Dish: Iceberg Lettuce is added to order
+
 
 
 ## Phase  4: Task 3
