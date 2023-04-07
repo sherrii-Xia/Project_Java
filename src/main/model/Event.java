@@ -42,6 +42,11 @@ public class Event {
     }
 
 
+    /**
+     * overridden equals method
+     *
+     * @return true if they have the same
+     */
     @Override
     public boolean equals(Object other) {
         if (other == null) {
@@ -58,11 +63,21 @@ public class Event {
                 && this.description.equals(otherEvent.description));
     }
 
+    /**
+     * overridden hashCOde method
+     *
+     * @return int hash code
+     */
     @Override
     public int hashCode() {
         return (HASH_CONSTANT * dateLogged.hashCode() + description.hashCode());
     }
 
+    /**
+     * overridden toString method
+     *
+     * @return String of event log
+     */
     @Override
     public String toString() {
         return dateLogged.toString() + "\n" + description;

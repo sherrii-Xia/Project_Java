@@ -36,20 +36,22 @@ This builds a practical pre-ordering system that could be used in the real life,
 - As a user, I want to load my previous order from a file 
 
 ## Instructions for Grader
-- You can add the dish to an order by clicking the image of Dish, then click "add the dish" button
-- You can remove the dish from an order by clicking the image of Dish, then click "remove the dish" button
-- You can restart order by clicking "redo order" button of Menu Main Frame.
-- You can check total amount of money of order by  clicking "view bill" button of Menu Main Frame. 
-- You can locate my visual component by the images for each dish in Menu Main Frame. 
-- You can save the state of my application by clicking "Save current order" button of Menu Main Frame.
-- You can reload the state of my application by clicking "load previous order" button of Menu Main Frame. 
+There is a log-in frame, once you input the username, the menu frame will show up, then
 
+- You can add the dish to order by clicking the image of the Dish, then clicking the "add the dish" button
+- You can remove the dish from an order by clicking the image of the Dish, then clicking the "remove the dish" button
+- You can restart the order by clicking the "redo order" button of the Menu Main Frame.
+- You can check the total amount of money in order by clicking "view bill" button of the Menu Main Frame.
+- You can locate my visual component by the images for each dish in Menu Main Frame.
+- You can save the state of my application by clicking the "Save current order" button of the Menu Main Frame.
+- You can reload the state of my application by clicking the "load previous order" button of the Menu Main Frame.
 ## Citation: 
 - Classes and corresponded test in persistence file refers to the demo project
   - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 - Load and Save method refers to WorkRoom project
   - the link to github: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
-
+- Event class and Eventlog Class refers to Alarm System application
+  - the link to gitHub: https://github.students.cs.ubc.ca/CPSC210/AlarmSystem.git
 
 ## Phase 4: Task 2
 
@@ -79,7 +81,7 @@ Dish: Iceberg Lettuce is added to order
 
 
 ## Phase  4: Task 3
-![img.png](img.png)
+![img_2.png](UML_Design_Diagram.png)
 
 ### Refactor idea
 First, The OrderingAppGUI can be restructured by extracting setMenuFrame() from login() method and calling setMenuFrame() from the constructor rather than being a part of login() because setting Menus Frame is a part of Initializing process of the application rather than doing functionality of login. If we extract setMenuFrame() this way, the code is more readable and reflects the behavior of what is going on.
